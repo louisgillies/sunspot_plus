@@ -13,6 +13,7 @@ Particularly useful for using 3rd party or remote solr servers over http as ofte
     Sunspot.session = Sunspot::SessionProxy::DelayedJobSessionProxy.new(Sunspot.session)
   
 * Define your searchable blocks as usual in ActiveRecord models.
+
     class Model < ActiveRecord::Base
       searchable do
         text :name
