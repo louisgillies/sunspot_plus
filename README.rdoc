@@ -2,8 +2,23 @@
 
 Extension to sunport_rails
 Currently includes a delayed_job proxy to queue Active Record re-indexing.
-Particularly useful for using 3rd party or remote solr servers over http as sometimes the round trip can delay page response times.
+Particularly useful for using 3rd party or remote solr servers over http as often the round trip can delay page response times.
 
+== Usage
+
+* Use rails initializer to create the sunspot session
+
+  require 'sunspot_rails'
+  # set the session to the delayed_job handler - this will send all model CRUD reindexing to delayed_job
+  Sunspot.session = Sunspot::SessionProxy::DelayedJobSessionProxy.new(Sunspot.session)
+  
+* Define your searchable blocks as usual in ActiveRecord models.
+  class Model < ActiveRecord::Base
+    searchable do
+      text :name
+    end
+  end
+  
 == Note on Patches/Pull Requests
  
 * Fork the project.
