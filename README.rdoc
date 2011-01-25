@@ -1,6 +1,8 @@
 = sunspot_plus
 
-Description goes here.
+Extension to sunport_rails
+Currently includes a delayed_job proxy to queue Active Record re-indexing.
+Particularly useful for using 3rd party or remote solr servers over http as sometimes the round trip can delay page response times.
 
 == Note on Patches/Pull Requests
  
