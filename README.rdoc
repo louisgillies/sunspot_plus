@@ -8,7 +8,7 @@ Particularly useful for using 3rd party or remote solr servers over http as ofte
 
 * Use rails initializer to create the sunspot session
 
-  `require 'sunspot_rails'`
+    require 'sunspot_rails'
     # set the session to the delayed_job handler - this will send all model CRUD reindexing to delayed_job
     Sunspot.session = Sunspot::SessionProxy::DelayedJobSessionProxy.new(Sunspot.session)
   
