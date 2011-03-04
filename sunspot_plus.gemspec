@@ -5,14 +5,15 @@
 
 Gem::Specification.new do |s|
   s.name = %q{sunspot_plus}
-  s.version = "0.2.2"
+  s.version = "0.3.0"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Louis Gillies"]
-  s.date = %q{2011-01-25}
+  s.date = %q{2011-03-04}
   s.description = %q{A library of extensions for outoftime's sunspot gem for solr indexing server. Using the session adapter design pattern to add support for:
-      1) delayed_job to move indexing commits out of process.
-    }
+    1) delayed_job to move indexing commits out of process.
+    Support for case insensitive sort fields by creating indexed copy of fields transformed for sort.
+  }
   s.email = %q{louisgillies@yahoo.co.uk}
   s.extra_rdoc_files = [
     "LICENSE",
@@ -20,10 +21,13 @@ Gem::Specification.new do |s|
   ]
   s.files = [
     "lib/sunspot_plus.rb",
+    "lib/sunspot_plus/dsl/fields.rb",
+    "lib/sunspot_plus/dsl/query/case_insensitive_sort.rb",
     "lib/sunspot_plus/session_proxy/delayed_job/indexing_job.rb",
     "lib/sunspot_plus/session_proxy/delayed_job/safe_configuration.rb",
     "lib/sunspot_plus/session_proxy/delayed_job_session_proxy.rb",
-    "lib/sunspot_plus/session_proxy/silent_fail_session_proxy.rb"
+    "lib/sunspot_plus/session_proxy/silent_fail_session_proxy.rb",
+    "lib/sunspot_plus/type/case_insensitive_sort_type.rb"
   ]
   s.homepage = %q{http://github.com/playgood/sunspot_plus}
   s.require_paths = ["lib"]
@@ -35,6 +39,7 @@ Gem::Specification.new do |s|
     "spec/sunspot/session_proxy/delayed_job/safe_configuration_spec.rb",
     "spec/sunspot/session_proxy/delayed_job_session_proxy_spec.rb",
     "spec/sunspot/session_proxy/spec_helper.rb",
+    "spec/sunspot/types/case_insensitive_sort_type_spec.rb",
     "spec/sunspot_plus_spec.rb"
   ]
 
@@ -42,19 +47,28 @@ Gem::Specification.new do |s|
     s.specification_version = 3
 
     if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
-      s.add_runtime_dependency(%q<sunspot>, [">= 0"])
-      s.add_runtime_dependency(%q<delayed_job>, [">= 0"])
+      s.add_development_dependency(%q<rspec>, ["~> 2.3.0"])
+      s.add_development_dependency(%q<yard>, ["~> 0.6.0"])
+      s.add_development_dependency(%q<bundler>, [">= 0"])
+      s.add_development_dependency(%q<jeweler>, ["~> 1.5.2"])
+      s.add_development_dependency(%q<rcov>, [">= 0"])
       s.add_development_dependency(%q<rspec>, ["= 1.3.0"])
       s.add_development_dependency(%q<yard>, [">= 0"])
     else
-      s.add_dependency(%q<sunspot>, [">= 0"])
-      s.add_dependency(%q<delayed_job>, [">= 0"])
+      s.add_dependency(%q<rspec>, ["~> 2.3.0"])
+      s.add_dependency(%q<yard>, ["~> 0.6.0"])
+      s.add_dependency(%q<bundler>, [">= 0"])
+      s.add_dependency(%q<jeweler>, ["~> 1.5.2"])
+      s.add_dependency(%q<rcov>, [">= 0"])
       s.add_dependency(%q<rspec>, ["= 1.3.0"])
       s.add_dependency(%q<yard>, [">= 0"])
     end
   else
-    s.add_dependency(%q<sunspot>, [">= 0"])
-    s.add_dependency(%q<delayed_job>, [">= 0"])
+    s.add_dependency(%q<rspec>, ["~> 2.3.0"])
+    s.add_dependency(%q<yard>, ["~> 0.6.0"])
+    s.add_dependency(%q<bundler>, [">= 0"])
+    s.add_dependency(%q<jeweler>, ["~> 1.5.2"])
+    s.add_dependency(%q<rcov>, [">= 0"])
     s.add_dependency(%q<rspec>, ["= 1.3.0"])
     s.add_dependency(%q<yard>, [">= 0"])
   end
