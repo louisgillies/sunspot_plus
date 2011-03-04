@@ -22,7 +22,7 @@ module Sunspot
        end
        
        def indexed_name(name) #:nodoc:
-         "sort_#{name}_s"
+         "#{name}_s"
        end
        
        def field_name(name)

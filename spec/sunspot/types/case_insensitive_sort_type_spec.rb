@@ -21,7 +21,7 @@ describe Sunspot::Type::CaseInsensitiveSortType do
   end
   
   it "should have an indexed name" do
-    @sort_type.indexed_name(:test).should == "sort_test_s"
+    @sort_type.indexed_name(:test).should == "test_s"
   end
   
   it "should convert a field attribute into a case insensitive field name" do
