@@ -7,14 +7,13 @@ group :development do
   gem "rspec", "~> 2.3.0"
   gem "yard", "~> 0.6.0"
   gem "bundler"
-  gem "jeweler", "~> 1.5.2"
-  gem "rcov", ">= 0"
+  gem "jeweler"
 end
 
 group :test do 
   gem "rspec", "~> 2.3.0"
   gem 'sunspot'
-  gem "ruby-debug"
+  gem "debugger"
   gem "sqlite3-ruby"
   gem "shoulda", "2.11.3"
   gem "sunspot_matchers"
