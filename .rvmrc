@@ -1,2 +1,0 @@
-rvm use ruby-1.9.1
-rvm wrapper ruby-1.9.1 textmate
