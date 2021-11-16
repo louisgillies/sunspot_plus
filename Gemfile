@@ -5,7 +5,7 @@ source "http://rubygems.org"
 
 group :development do
   gem "rspec", "~> 2.3.0"
-  gem "yard", "~> 0.6.0"
+  gem "yard", "~> 0.9.20"
   gem "bundler"
   gem "jeweler"
 end

@@ -36,26 +36,26 @@ Gem::Specification.new do |s|
 
     if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
       s.add_development_dependency(%q<rspec>, ["~> 2.3.0"])
-      s.add_development_dependency(%q<yard>, ["~> 0.6.0"])
+      s.add_development_dependency(%q<yard>, "~> 0.9.20")
       s.add_development_dependency(%q<bundler>, [">= 0"])
       s.add_development_dependency(%q<jeweler>, [">= 0"])
       s.add_development_dependency(%q<rspec>, ["= 1.3.0"])
-      s.add_development_dependency(%q<yard>, [">= 0"])
+      s.add_development_dependency(%q<yard>, "~> 0.9.20")
     else
       s.add_dependency(%q<rspec>, ["~> 2.3.0"])
-      s.add_dependency(%q<yard>, ["~> 0.6.0"])
+      s.add_dependency(%q<yard>, "~> 0.9.20")
       s.add_dependency(%q<bundler>, [">= 0"])
       s.add_dependency(%q<jeweler>, [">= 0"])
       s.add_dependency(%q<rspec>, ["= 1.3.0"])
-      s.add_dependency(%q<yard>, [">= 0"])
+      s.add_dependency(%q<yard>, "~> 0.9.20")
     end
   else
     s.add_dependency(%q<rspec>, ["~> 2.3.0"])
-    s.add_dependency(%q<yard>, ["~> 0.6.0"])
+    s.add_dependency(%q<yard>, "~> 0.9.20")
     s.add_dependency(%q<bundler>, [">= 0"])
     s.add_dependency(%q<jeweler>, [">= 0"])
     s.add_dependency(%q<rspec>, ["= 1.3.0"])
-    s.add_dependency(%q<yard>, [">= 0"])
+    s.add_dependency(%q<yard>, "~> 0.9.20")
   end
 end
 
