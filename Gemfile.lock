@@ -19,7 +19,7 @@ GEM
       rdoc
     json (1.7.6)
     pr_geohash (1.0.0)
-    rake (10.0.3)
+    rake (13.0.6)
     rdoc (3.12)
       json (~> 1.4)
     rsolr (1.0.8)
