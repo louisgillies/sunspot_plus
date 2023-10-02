@@ -17,11 +17,9 @@ GEM
       git (>= 1.2.5)
       rake
       rdoc
-    json (1.7.6)
     pr_geohash (1.0.0)
     rake (13.0.6)
-    rdoc (3.12)
-      json (~> 1.4)
+    rdoc (6.3.3)
     rsolr (1.0.8)
       builder (>= 2.1.2)
     rspec (2.3.0)
